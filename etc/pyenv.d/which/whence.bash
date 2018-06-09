@@ -1,4 +1,4 @@
-if [ -n "$PYENV_COMMAND" ] && [ ! -x "$PYENV_COMMAND_PATH" ]; then
+if [ -t 1 ] && [ -n "$PYENV_COMMAND" ] && [ ! -x "$PYENV_COMMAND_PATH" ]; then
   versions=($(pyenv-whence "${PYENV_COMMAND}" 2>/dev/null || true))
   if [ -n "${versions}" ]; then
     if [ "${#versions[@]}" -gt 1 ]; then
